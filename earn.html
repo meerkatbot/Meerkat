@@ -27,7 +27,7 @@
             margin-bottom: 10px;
         }
         .box {
-            background-color: #444; /* Darker gray for the boxes */
+            background-color: #444;
             padding: 10px;
             margin: 5px 0;
             border-radius: 10px;
@@ -36,14 +36,8 @@
             font-size: 20px;
             margin-bottom: 5px;
         }
-        .points {
-            color: #FFD700; /* Gold color for contrast */
-            font-weight: bold;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-        .total-points {
-            color: #FFD700; /* Same color for total points */
+        .points, .total-points {
+            color: #FFD700;
             font-weight: bold;
             font-size: 14px;
             margin-top: 5px;
@@ -79,41 +73,36 @@
             margin-bottom: 5px;
         }
         .small-text {
-    font-size: 12px;
-    color: #FFD700; /* Gold color for visibility */
-    margin-top: 0;
-    font-family: 'Poppins', sans-serif; /* Add Poppins font */
-    font-weight: normal; /* Ensure the text is not bold */
-}
+            font-size: 12px;
+            color: #FFD700;
+            margin-top: 0;
+        }
         .bottom-nav {
-    display: flex;
-    justify-content: space-around;
-    background-color: #000;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 10px 0;
-}
-
-.nav-item {
-    text-align: center;
-    color: white;
-    text-decoration: none;
-}
-
-.nav-item img {
-    width: 24px;
-    height: 24px;
-    display: block;
-    margin: 0 auto 5px;
-}
-
-.nav-item span {
-    font-size: 14px;
-    font-weight: bold
-}
+            display: flex;
+            justify-content: space-around;
+            background-color: #000;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 10px 0;
+        }
+        .nav-item {
+            text-align: center;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-item img {
+            width: 24px;
+            height: 24px;
+            display: block;
+            margin: 0 auto 5px;
+        }
+        .nav-item span {
+            font-size: 14px;
+            font-weight: bold;
+        }
         .nav-item img[src*="task.png"] {
-            filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Adjusts color to yellow */
+            filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
         }
     </style>
 </head>
@@ -137,7 +126,7 @@
                     <span class="task-title">Join Telegram Channel</span>
                     <span class="small-text">+250 MEER Points</span>
                 </div>
-                <button class="button">Start</button>
+                <button class="button" onclick="window.open('https://t.me/MeerkatBattle_Channel', '_blank')">Start</button>
             </li>
             <li class="task">
                 <div class="task-info">
@@ -157,22 +146,22 @@
     </div>
 
     <div class="bottom-nav">
-    <a href="https://meerkatbot.github.io/Meerkat/index.html" class="nav-item">
-        <img src="home.png" alt="Home"> <!-- Adjust path for images -->
-        <span>Home</span>
-    </a>
-    <a href="#" class="nav-item">
-        <img src="task.png" alt="Earn"> <!-- Adjust path for images -->
-        <span>Earn</span>
-    </a>
-    <a href="#" class="nav-item">
-        <img src="friends.png" alt="Frens">
-        <span>Frens</span>
-    </a>
-    <a href="#" class="nav-item">
-        <img src="wallet.png" alt="Wallet">
-        <span>Wallet</span>
-    </a>
-</div>
+        <a href="https://meerkatbot.github.io/Meerkat/index.html" class="nav-item">
+            <img src="home.png" alt="Home">
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-item">
+            <img src="task.png" alt="Earn">
+            <span>Earn</span>
+        </a>
+        <a href="#" class="nav-item">
+            <img src="friends.png" alt="Frens">
+            <span>Frens</span>
+        </a>
+        <a href="#" class="nav-item">
+            <img src="wallet.png" alt="Wallet">
+            <span>Wallet</span>
+        </a>
+    </div>
 </body>
 </html>
