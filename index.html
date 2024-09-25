@@ -5,8 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farming System</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script> <!-- Include Lottie library -->
+    <style>
+        /* Style for the splash screen */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000; /* Splash screen background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999; /* Ensure splash screen is on top */
+        }
+        /* Hide the main content initially */
+        .container {
+            display: none;
+        }
+        /* Style for the loading animation container */
+        #loading-animation {
+            width: 150px; /* Adjust width to make it smaller */
+            height: 150px; /* Adjust height to make it smaller */
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Splash Screen for Loading Animation -->
+    <div id="splash-screen" class="splash-screen">
+        <div id="loading-animation"></div> <!-- Container for Lottie animation -->
+    </div>
 
     <div class="container">
         <div class="user-info">
@@ -45,6 +75,22 @@
         </a>
     </div>
 
-   <<script src="script.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Load the Lottie animation
+        const animation = lottie.loadAnimation({
+            container: document.getElementById('loading-animation'), // ID of the container
+            renderer: 'svg',
+            loop: false, // Change to false if you want it to play once
+            autoplay: true, // Start playing the animation automatically
+            path: '/assets/animation/Animation - 1727258546169.json' // Path to your Lottie JSON file
+        });
+
+        // Hide splash screen and show main content after the animation is finished
+        animation.addEventListener('complete', () => {
+            document.getElementById('splash-screen').style.display = 'none'; // Hide the splash screen
+            document.querySelector('.container').style.display = 'block'; // Show the main content
+        });
+    </script>
 </body>
 </html>
