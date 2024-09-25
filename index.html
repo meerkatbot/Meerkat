@@ -3,40 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farming System</title>
+    <title>MEER</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script> <!-- Include Lottie library -->
-    <style>
-        /* Style for the splash screen */
-        .splash-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000000; /* Splash screen background color */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999; /* Ensure splash screen is on top */
-        }
-        /* Hide the main content initially */
-        .container {
-            display: none;
-        }
-        /* Style for the loading animation container */
-        #loading-animation {
-            width: 150px; /* Adjust width to make it smaller */
-            height: 150px; /* Adjust height to make it smaller */
-        }
-    </style>
 </head>
 <body>
-
-    <!-- Splash Screen for Loading Animation -->
-    <div id="splash-screen" class="splash-screen">
-        <div id="loading-animation"></div> <!-- Container for Lottie animation -->
-    </div>
 
     <div class="container">
         <div class="user-info">
@@ -75,22 +45,81 @@
         </a>
     </div>
 
-    <script src="script.js"></script>
     <script>
-        // Load the Lottie animation
-        const animation = lottie.loadAnimation({
-            container: document.getElementById('loading-animation'), // ID of the container
-            renderer: 'svg',
-            loop: false, // Change to false if you want it to play once
-            autoplay: true, // Start playing the animation automatically
-            path: '/assets/animation/Animation - 1727258546169.json' // Path to your Lottie JSON file
-        });
+        // Initialize variables
+let balance = parseFloat(localStorage.getItem('balance')) || 73751.0; // Load balance from localStorage
+let farmingActive = JSON.parse(localStorage.getItem('farmingActive')) || false; // Load farming status
+let countdown = parseInt(localStorage.getItem('countdown')) || 0; // Load countdown
+let farmingInterval;
 
-        // Hide splash screen and show main content after the animation is finished
-        animation.addEventListener('complete', () => {
-            document.getElementById('splash-screen').style.display = 'none'; // Hide the splash screen
-            document.querySelector('.container').style.display = 'block'; // Show the main content
-        });
-    </script>
+// Function to load the initial state
+function loadInitialState() {
+    // Update balance display
+    document.querySelector('.user-balance').innerHTML = `&#8383; ${balance.toFixed(1)}`;
+
+    if (farmingActive) {
+        startFarming(true); // Start farming if it was active
+    } else {
+        document.getElementById('countdown').textContent = 'You can start farming now!';
+        document.querySelector('.start-farming-btn').style.display = 'block'; // Show the start farming button
+    }
+}
+
+// Function to start farming
+function startFarming(fromLoad = false) {
+    // Hide the start farming button and show the countdown
+    document.querySelector('.start-farming-btn').style.display = 'none';
+    document.getElementById('countdown').style.display = 'block';
+
+    if (!fromLoad) {
+        // Start the farming process
+        farmingActive = true;
+        localStorage.setItem('farmingActive', true); // Save farming state
+        countdown = 43200; // Reset countdown to 12 hours
+        localStorage.setItem('countdown', countdown); // Save initial countdown
+    }
+
+    farmingInterval = setInterval(updateCountdown, 1000); // Update countdown every second
+    updateCountdown(); // Initialize countdown display
+}
+
+// Function to update the farming balance
+function updateFarming() {
+    balance += 0.1; // Increment balance by 0.1
+    document.querySelector('.user-balance').innerHTML = `&#8383; ${balance.toFixed(1)}`;
+    localStorage.setItem('balance', balance); // Save balance to localStorage
+}
+
+// Function to update the countdown timer
+function updateCountdown() {
+    if (countdown > 0) {
+        countdown--; // Decrease countdown
+
+        // Call updateFarming() every second while farming is active
+        updateFarming(); // Increment the balance by 0.1 every second
+
+        // Get hours, minutes, and seconds from the countdown
+        let hours = Math.floor(countdown / 3600);
+        let minutes = Math.floor((countdown % 3600) / 60);
+        let seconds = countdown % 60;
+
+        // Display the countdown timer
+        document.getElementById('countdown').textContent = `Next farming available in: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        localStorage.setItem('countdown', countdown); // Save countdown to localStorage
+    } else {
+        clearInterval(farmingInterval);
+        farmingActive = false;
+        localStorage.setItem('farmingActive', false); // Update farming state
+        document.getElementById('countdown').textContent = 'You can start farming now!';
+        document.querySelector('.start-farming-btn').style.display = 'block'; // Show the start farming button again
+    }
+}
+
+// Add event listener to the Start Farming button
+document.querySelector('.start-farming-btn').addEventListener('click', startFarming);
+
+// Load initial state on page load
+loadInitialState();
+    </script><!-- Link to JavaScript -->
 </body>
 </html>
