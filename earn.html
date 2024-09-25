@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url('200w.gif');
+            font-family: 'Poppins', sans-serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .box {
+            background-color: #444; /* Darker gray for the boxes */
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+        }
+        .box-title {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .points {
+            color: #FFD700; /* Gold color for contrast */
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .total-points {
+            color: #FFD700; /* Same color for total points */
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .button {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task {
+            background-color: #333;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .task-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .task-title {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .small-text {
+    font-size: 12px;
+    color: #FFD700; /* Gold color for visibility */
+    margin-top: 0;
+    font-family: 'Poppins', sans-serif; /* Add Poppins font */
+    font-weight: normal; /* Ensure the text is not bold */
+}
+        .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.nav-item {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-item img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.nav-item span {
+    font-size: 14px;
+    font-weight: bold
+}
+        .nav-item img[src*="task.png"] {
+            filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Adjusts color to yellow */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-title">Earn 1</div>
+        <div class="box">
+            <div class="box-title">The Open League Quest</div>
+            <div class="points">+1,000 MEER Points</div>
+        </div>
+        <div class="box">
+            <div class="box-title">Weekly</div>
+            <div>Earn for checking socials</div>
+            <div class="total-points">+0/540 MEER Points</div>
+            <button class="button">Open</button>
+        </div>
+
+        <ul class="task-list">
+            <li class="task">
+                <div class="task-info">
+                    <span class="task-title">Join Telegram Channel</span>
+                    <span class="small-text">+250 MEER Points</span>
+                </div>
+                <button class="button">Start</button>
+            </li>
+            <li class="task">
+                <div class="task-info">
+                    <span class="task-title">Subscribe to YouTube Channel</span>
+                    <span class="small-text">+250 MEER Points</span>
+                </div>
+                <button class="button">Start</button>
+            </li>
+            <li class="task">
+                <div class="task-info">
+                    <span class="task-title">Follow Us on Twitter</span>
+                    <span class="small-text">+250 MEER Points</span>
+                </div>
+                <button class="button">Start</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="bottom-nav">
+    <a href="index.html" class="nav-item">
+        <img src="../assets/pics/home.png" alt="Home"> <!-- Adjust path for images -->
+        <span>Home</span>
+    </a>
+    <a href="earn.html" class="nav-item">
+        <img src="../assets/pics/task.png" alt="Earn"> <!-- Adjust path for images -->
+        <span>Earn</span>
+    </a>
+    <a href="#" class="nav-item">
+        <img src="../assets/pics/friends.png" alt="Frens">
+        <span>Frens</span>
+    </a>
+    <a href="#" class="nav-item">
+        <img src="../assets/pics/wallet.png" alt="Wallet">
+        <span>Wallet</span>
+    </a>
+</div>
+</body>
+</html>
