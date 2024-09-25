@@ -137,9 +137,9 @@ body {
 
 /* Add this to your styles.css file */
 .start-farming-btn {
-    transition: transform 0.1s; /* Smooth transition for scaling */
+    transition: transform 0.5s; /* Smooth transition for scaling */
 }
 
 .start-farming-btn:active {
-    transform: scale(0.95); /* Scale down the button slightly when clicked */
+    transform: scale(1); /* Scale down the button slightly when clicked */
     }
