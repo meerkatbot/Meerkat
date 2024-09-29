@@ -152,7 +152,7 @@ body {
             position: relative;
             padding: 15px 30px;
             font-size: 18px;
-            background-color: #4CAF50;
+            background-color: rgba(255, 255, 255, 0.1);
             color: white;
             border: none;
             border-radius: 5px;
@@ -161,13 +161,13 @@ body {
             margin: 10px; /* Add margin for spacing between buttons */
         }
         .farming-button:hover {
-            background-color: #45a049;
+            background-color: rgba(255, 255, 255, 0.1);
         }
         .farming-button.active {
-            background-color: #f44336;
+            background-color: rgba(255, 255, 255, 0.1);
         }
         .farming-button.active:hover {
-            background-color: #d32f2f;
+            background-color: rgba(255, 255, 255, 0.1);
         }
         .farming-status {
             text-align: center;
