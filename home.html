@@ -2,63 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
-     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
-    <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Home</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+
     <style>
         /* Prevent text selection */
-        body {
-            user-select: none; /* Non-standard */
-            -webkit-user-select: none; /* Safari */
-            -moz-user-select: none; /* Firefox */
-            -ms-user-select: none; /* Internet Explorer/Edge */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-            font-family: 'Courier Prime', monospace; /* Use Courier Prime */
+        
+        html, body {
+            font-family: 'Courier Prime', monospace; /* Use Courier Prime for everything */
             background-color: #121212; /* Dark background for a hacker vibe */
             color: #00ff00; /* Bright green text */
-            margin: 0;
-            padding: 20px;
-            font-size: 16px; /* Adjust font size as needed */
+            height: 100%; /* Ensure body takes full height */
+            overflow: hidden; /* Remove scroll */
         }
 
         h1, h2, h3 {
             color: #ffcc00; /* Different color for headings */
         }
 
-        .farming-button{
-         font-family: 'Courier Prime', monospace; /* Use for code snippets */
-         background-color: rgba(255, 255, 255, 0.1); /* Light background for code */
-          
-         color: whitesmoke;
-         padding: 15px 30px;
-         border-radius: 30px;
-         font-size: 16px;
-         font-weight: bold; /* Make button text bold */
-         border: none;
-         cursor: pointer;
-         margin-bottom: 20px; /* Space below the button */
-         transition: transform 0.1s; /* Smooth transition for scaling */
+        .farming-button {
+            font-family: 'Courier Prime', monospace;
+            background-color: rgba(255, 255, 255, 0.1); /* Light background for button */
+            color: whitesmoke;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px; /* Space below the button */
+            transition: transform 0.1s; /* Smooth transition for scaling */
         }
 
         .balance {
             font-size: 20px; /* Larger font size for balance display */
         }
+
+        /* Disable text selection */
+        body {
             user-select: none; /* Non-standard */
             -webkit-user-select: none; /* Safari */
             -moz-user-select: none; /* Firefox */
-            -ms-user-select: none; /* Internet Explorer/Edge */
+            -ms-user-select: none; /* IE/Edge */
+        }
+
+        /* Bottom navigation */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #1e1e1e;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-item img {
+            width: 24px;
+            height: 24px;
         }
     </style>
 </head>
 <body>
-    <h1></h1>
+    <h1>Welcome to the App</h1>
     <div class="container">
         <div class="user-info">
             <div class="user-avatar">M</div>
@@ -70,8 +92,6 @@
 
         <!-- Start Farming Button -->
         <button id="toggle-farming-btn" class="farming-button">Start Farming</button>
-        
-        <!-- New Button to manually update balance -->
        
         <div id="farming-status" class="farming-status"></div>
 
