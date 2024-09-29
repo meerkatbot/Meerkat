@@ -9,13 +9,47 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
-        font-family: 'Courier Prime', monospace; /* Use Courier Prime */
+        /* Prevent text selection */
+        body {
+              font-family: 'Courier Prime', monospace; /* Use Courier Prime */
             background-color: #121212; /* Dark background for a hacker vibe */
             color: #00ff00; /* Bright green text */
             margin: 0;
             padding: 20px;
             font-size: 16px; /* Adjust font size as needed */
+        }
+
+        h1, h2, h3 {
+            color: #ffcc00; /* Different color for headings */
+        }
+
+        .farming-button{
+         font-family: 'Courier Prime', monospace; /* Use for code snippets */
+         background-color: rgba(255, 255, 255, 0.1); /* Light background for code */
+          
+         color: whitesmoke;
+         padding: 15px 30px;
+         border-radius: 30px;
+         font-size: 16px;
+         font-weight: bold; /* Make button text bold */
+         border: none;
+         cursor: pointer;
+         margin-bottom: 20px; /* Space below the button */
+         transition: transform 0.1s; /* Smooth transition for scaling */
+        }
+
+        .balance {
+            font-size: 20px; /* Larger font size for balance display */
+        }
+            user-select: none; /* Non-standard */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+        }
     </style>
 </head>
 <body>
