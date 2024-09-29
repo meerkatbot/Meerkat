@@ -143,3 +143,29 @@ body {
 .start-farming-btn:active {
     transform: scale(1); /* Scale down the button slightly when clicked */
     }
+        .farming-button {
+            position: relative;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px; /* Add margin for spacing between buttons */
+        }
+        .farming-button:hover {
+            background-color: #45a049;
+        }
+        .farming-button.active {
+            background-color: #f44336;
+        }
+        .farming-button.active:hover {
+            background-color: #d32f2f;
+        }
+        .farming-status {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
