@@ -1,0 +1,145 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #000;
+    color: white;
+    background: url('assets/pics/200w.gif');
+}
+
+.container {
+    padding: 20px;
+    padding-bottom: 80px; /* Add padding to the bottom for the nav */
+    flex-grow: 1; /* Allow container to grow */
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    justify-content: space-between; /* Space between top and bottom */
+    min-height: calc(100vh - 60px); /* Full height minus nav height */
+}
+
+.user-info {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.user-avatar {
+    background-color: blue;
+    width: 100px; /* Increased size */
+    height: 100px; /* Increased size */
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px; /* Increased size */
+    color: white;
+}
+
+.user-balance {
+    font-size: 48px; /* Increased size */
+    margin-top: 10px;
+    font-weight: bold; /* Make balance bold */
+}
+
+.game-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.game-title {
+    font-size: 18px;
+    font-weight: bold; /* Make game title bold */
+}
+
+.game-tickets {
+    background-color: red;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold; /* Make tickets bold */
+}
+
+.play-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold; /* Make play button text bold */
+}
+
+.bottom-farming {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    width: 100%;
+    margin: 20px 0; /* Added margin for spacing */
+}
+
+.start-farming-btn {
+    background-color: #fff;
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold; /* Make button text bold */
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px; /* Space below the button */
+    transition: transform 0.1s; /* Smooth transition for scaling */
+}
+
+.start-farming-btn:active {
+    transform: scale(0.95); /* Scale down the button slightly when clicked */
+}
+
+#countdown {
+    margin-top: 20px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold; /* Make countdown bold */
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.nav-item {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-item img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.nav-item span {
+    font-size: 14px;
+    font-weight: bold; /* Make nav item text bold */
+}
+
+/* Add this to your styles.css file */
+.start-farming-btn {
+    transition: transform 0.5s; /* Smooth transition for scaling */
+}
+
+.start-farming-btn:active {
+    transform: scale(1); /* Scale down the button slightly when clicked */
+    }
