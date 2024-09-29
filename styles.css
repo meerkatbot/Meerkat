@@ -4,6 +4,11 @@ body {
     background-color: #000;
     color: white;
     background: url('assets/pics/200w.gif');
+    user-select: none; /* Non-standard */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+}
 }
 
 .container {
